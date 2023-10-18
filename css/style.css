@@ -11,7 +11,10 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box; /* Hack para Box Model **/
+    scroll-snap-type: y mandatory; /* efecto scroll */
 }
+
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -215,8 +218,19 @@ grid maneja 2 dimensiones */
     color: var(--primario);
 }
 
-.contenedor-campos{
-
+@media(min-width:768px){
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+    /* selecionar el 3 campo con clase .campo(ya que todos se llaman igual) */
+    .campos:nth-child(3),
+    .campos:nth-child(4)
+    {
+        grid-column: 1/3;
+    }
 }
 .campos{
     margin-bottom: 1rem;
@@ -227,6 +241,9 @@ grid maneja 2 dimensiones */
     margin-bottom: .5rem;
     display: block;
 }
+.campos textarea{
+    height: 20rem;
+}
 
 .input-text{
     width: 100%;
@@ -235,5 +252,9 @@ grid maneja 2 dimensiones */
     border-radius: 1.5rem;
 }
 
+/* footer */
+.footer{
+    text-align: center;
+}
 
 
