@@ -22,6 +22,14 @@ body{
     /* gradiente de abajo hacia arriba */
     background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 100% );
 }
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+     box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+     background-color: var(--blanco);
+     padding: 2rem;
+     border-radius: 1rem;
+}
 
 /* ocupara el ancho de 100%, hasta que llegue a 1200px */
 .contenedor{
@@ -47,6 +55,9 @@ body{
         width: auto;
     }
 }
+.boton:hover{
+    cursor: pointer;
+}
 
 /* tipografia */
 h1{
@@ -66,6 +77,22 @@ h1, h2, h3 {
 .titulo span{
     font-size: 2rem;
 }
+/* utilidades */
+.w-sm-100{
+    width: 100%;
+}
+@media (min-width: 768px){
+    .w-sm-100{
+        width: auto;
+    }
+}
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
 /* navegacion */
 .nav-bg {
     background-color: var(--secondary);
@@ -134,7 +161,79 @@ h1, h2, h3 {
     align-items: flex-end;
 }
 
+/* servicios 
+grid maneja 2 dimensiones */
+ @media (min-width: 768px){ /* aplicar cuando sea mayor que 768px de ancho(pantalla estandar) */
+    .servicios{
+        display: grid;
+         /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
 
+    } 
+}
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.servicio h3{
+    color: var(--secondary);
+    font-weight: 700;
+}
+.servicio p{
+    line-height: 2;
+}
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* contacto */
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /* utiliza el valor mas pequeño dependiendo el ancho */
+     margin: 0 auto; /* centrar horizontalmente */
+    padding: 2rem;
+    border-radius: 1rem;
+    }
+.formulario fieldset{
+    border: none;
+}
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-campos{
+
+}
+.campos{
+    margin-bottom: 1rem;
+}
+.campos label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
 
 
 
